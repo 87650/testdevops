@@ -1,0 +1,29 @@
+name: Run Node.js Script
+
+on:
+  push:
+    branches:
+      - master  # Runs on pushes to the main branch
+  pull_request:
+    branches:
+      - master  # Runs on pull requests targeting the main branch
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest # Specifies the operating system for the runner
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3 # Check out the repository to the runner
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3 # Setup Node.js environment
+        with:
+          node-version: '18' # Specify the Node.js version
+
+      - name: Install Dependencies (Optional)
+        run: npm install  # Installs dependencies if your project needs them
+
+      - name: Run Node.js Script
+        run: node main.js # Replace your-script.js with the actual filename
+          

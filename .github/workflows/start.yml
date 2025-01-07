@@ -21,8 +21,8 @@ jobs:
         with:
           node-version: '18' # Specify the Node.js version
 
-      - name: Install Dependencies (Optional)
-        run: npm install  # Installs dependencies if your project needs them
+#      - name: Install Dependencies (Optional)
+#        run: npm install  # Installs dependencies if your project needs them
 
       - name: Run Node.js Script
         run: node main.js # Replace your-script.js with the actual filename
